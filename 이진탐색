@@ -1,0 +1,15 @@
+def binary_search(element, some_list):
+    start = 0
+    end = len(some_list) - 1
+    pivot = (start + end) // 2
+    while start<=end:
+        if element == some_list[pivot]:
+            return pivot
+        elif element < some_list[pivot]:
+            end = pivot-1
+            pivot = (start + end) // 2
+        elif element > some_list[pivot]:
+            start = pivot+1
+            pivot = (start + end) // 2
+
+    return None
